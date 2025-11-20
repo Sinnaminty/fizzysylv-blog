@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Starting fizzysylv.xyz • Aiden’s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="How I set up my personal site fizzysylv.xyz.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="blog">
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="/" class="logo">fizzysylv<span>.xyz</span></a>
+      <nav class="nav">
+        <a href="/">Home</a>
+
+        <a href="/blog/">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="section">
+      <div class="container post">
+
+        <p class="post-meta">2025-01-01 • meta, personal</p>
+        <h1>Starting fizzysylv.xyz</h1>
+
+        <p>
+          I’ve been meaning to set up a proper personal site for a while, so I finally
+          grabbed <code>fizzysylv.xyz</code> and decided to build it by hand.
+        </p>
+
+        <p>
+          Right now this site is just static HTML/CSS deployed through Cloudflare Pages.
+          That’s intentional: I wanted something fast, simple, and easy to maintain
+
+          while I focus on building cool projects instead of fiddling with a heavy stack.
+        </p>
+
+        <h2>What I’ll write about</h2>
+
+        <ul>
+          <li>Rust experiments (including my toy database project).</li>
+          <li>Notes from working on web apps and backend systems.</li>
+          <li>Crypto, security, and whatever I’m learning at the moment.</li>
+          <li>Life updates and miscellaneous “fizzy” thoughts.</li>
+        </ul>
+
+        <p>
+          If you somehow found your way here and want to say hi, you can always reach
+          me via email on the main site.
+        </p>
+
+        <p><a href="/blog/">← Back to all posts</a></p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aiden Rivera • fizzysylv.xyz</p>
+      <p><a href="/">Back to main site</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
