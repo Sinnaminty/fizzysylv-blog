@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fizzy’s Log • fizzysylv.xyz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fizzy’s personal log: fursuiting, programming, music, AV chaos, and general life updates.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="blog">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">fizzysylv<span>.xyz</span></a>
+
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="#top">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero small">
+      <div class="container">
+        <p class="eyebrow">log directory</p>
+        <h1>Fizzy’s Log</h1>
+        <p class="hero-subtitle">
+          Dev notes, con stories, music brainworms, and whatever else I feel
+          like yelling into the void about.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Posts</h2>
+        <ul class="post-list">
+          <li class="post-item">
+            <a href="first-post.html" class="post-title">Booting fizzysylv.xyz</a>
+            <p class="post-meta">2025-01-01 • meta, site</p>
+            <p class="post-excerpt">
+              How this tiny corner of the internet came to be, what I want to
+              use it for, and why it looks like a terminal from 1993…
+            </p>
+          </li>
+
+
+          <!-- Add more <li> entries here as you create posts -->
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <p>© <span id="year"></span> Fizzy • fizzysylv.xyz</p>
+      <p><a href="/">return to main.c</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

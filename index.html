@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aiden’s Blog • fizzysylv.xyz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal blog by Aiden Rivera – software engineering, Rust, projects, and life updates.">
+  <meta charset="UTF-8" />
+  <title>blog.fizzysylv.xyz • Fizzy’s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fizzy’s blog — dev logs, con stories, adventures." />
 
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body class="blog">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">fizzysylv<span>.xyz</span></a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="#top">Blog</a>
-      </nav>
+  <header class="blog-header">
+    <div class="container">
+      <div class="blog-topbar">
+        <a class="blog-home" href="https://fizzysylv.xyz">← fizzysylv.xyz</a>
+        <a class="blog-social" href="https://twitter.com/Sinnaminty" target="_blank" rel="noopener">@Sinnaminty</a>
+      </div>
+
+
+      <h1 class="blog-title">Fizzy’s Blog</h1>
+      <p class="blog-subtitle">dev logs • con stories • adventures</p>
     </div>
   </header>
 
+  <main class="container blog-main">
+    <section class="post-feed">
 
-  <main id="top">
+      <!-- Post card -->
+      <article class="post-card">
+        <div class="post-meta">
+          <time datetime="2026-01-28">Jan 28, 2026</time>
+          <span class="dot">•</span>
+          <span class="tags">meta</span>
+        </div>
+        <h2 class="post-title">
+          <a href="posts/booting-fizzysylv.html">Booting fizzysylv.xyz</a>
 
-    <section class="hero small">
-      <div class="container">
-        <p class="eyebrow">Blog</p>
-
-        <h1>Aiden’s Notes & Updates</h1>
-        <p class="hero-subtitle">
-          Occasional posts about what I’m building, learning, and thinking about.
+        </h2>
+        <p class="post-excerpt">
+          blog? why start a blog?
         </p>
-      </div>
+      </article>
+
+
+      <!--
+        <article class="post-card">
+        <div class="post-meta">
+          <time datetime="2026-01-20">Jan 20, 2026</time>
+          <span class="dot">•</span>
+          <span class="tags">dev</span>
+        </div>
+        <h2 class="post-title">
+          <a href="posts/writing-in-rust.html">Writing in Rust: a script-kitty's perspective.</a>
+
+        </h2>
+        <p class="post-excerpt">
+          i've always had a skill issue programming.. but learning rust changed the way I thought about programming.
+        </p>
+      </article>
+      -->
+
+
+      <!-- Add more posts by copy/paste -->
+
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>Posts</h2>
-        <ul class="post-list">
-          <li class="post-item">
-            <a href="first-post.html" class="post-title">Starting fizzysylv.xyz</a>
-            <p class="post-meta">2025-01-01 • meta, personal</p>
-            <p class="post-excerpt">
-              A quick write-up of how I set up this site, why I wanted my own domain,
-              and what I plan to write about here…
-            </p>
-          </li>
-
-
-          <!-- Add more <li> entries here as you create posts -->
-        </ul>
-      </div>
-
-    </section>
+    <footer class="blog-footer">
+      <p>© <span id="year"></span> FizzyCo • <a href="rss.xml">RSS (soon)</a></p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-
-      <p>© <span id="year"></span> Aiden Rivera • fizzysylv.xyz</p>
-      <p><a href="/">Back to main site</a></p>
-    </div>
-  </footer>
-
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

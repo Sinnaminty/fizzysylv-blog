@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>POST TITLE • Fizzy’s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="SHORT DESCRIPTION FOR PREVIEW." />
+
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body class="blog">
+
+  <header class="blog-header">
+    <div class="container">
+      <div class="blog-topbar">
+        <a class="blog-home" href="../index.html">← blog home</a>
+        <a class="blog-social" href="https://twitter.com/Sinnaminty" target="_blank" rel="noopener">@Sinnaminty</a>
+
+      </div>
+
+      <h1 class="blog-title">POST TITLE</h1>
+      <p class="blog-subtitle">OPTIONAL SUBTITLE (or delete this line)</p>
+    </div>
+  </header>
+
+  <main class="container blog-main">
+    <article class="post-page">
+      <div class="post-meta">
+        <time datetime="2026-01-28">Jan 28, 2026</time>
+        <span class="dot">•</span>
+        <span class="tags">tag1, tag2</span>
+      </div>
+
+
+      <!-- Content starts -->
+      <p>
+        Write your intro paragraph here. Keep it short and punchy.
+      </p>
+
+      <h2>Section heading</h2>
+      <p>
+        Normal paragraph text. <strong>Bold</strong>, <em>italics</em>, and
+        <code>inline code</code> are all styled.
+      </p>
+
+
+      <h3>Code sample</h3>
+      <pre><code class="language-rust">fn main() {
+    println!("hello from fizzy blog");
+}</code></pre>
+
+      <blockquote>
+        A quote / thought / gremlin wisdom goes here.
+      </blockquote>
+
+      <h3>Image example</h3>
+      <figure>
+        <img src="../assets/img/example.jpg" alt="Describe the image">
+        <figcaption>Optional caption text.</figcaption>
+      </figure>
+
+      <hr>
+
+      <p class="post-nav">
+        <a href="../index.html">← Back to all posts</a>
+      </p>
+      <!-- Content ends -->
+    </article>
+
+    <footer class="blog-footer">
+      <p>© <span id="year"></span> Fizzy</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
