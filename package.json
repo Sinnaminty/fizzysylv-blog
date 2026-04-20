@@ -1,0 +1,14 @@
+{
+  "name": "fizzysylv-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.7",
+    "zod": "^3.25.67"
+  }
+}

@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogHeader from "../../components/BlogHeader.astro";
+import PostMeta from "../../components/PostMeta.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, "") },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title} • Fizzy’s Blog`}
+  description={post.data.description}
+>
+  <BlogHeader
+    title={post.data.title}
+    subtitle={post.data.subtitle}
+    homeHref="/"
+    homeLabel="← blog home"
+  />
+
+  <main class="container blog-main">
+    <article class="post-page">
+      <PostMeta pubDate={post.data.pubDate} tags={post.data.tags} />
+      <Content />
+      <hr />
+      <p class="post-nav">
+        <a href="/">← Back to all posts</a>
+      </p>
+    </article>
+  </main>
+</BaseLayout>

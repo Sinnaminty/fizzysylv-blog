@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogHeader from "../components/BlogHeader.astro";
+import PostMeta from "../components/PostMeta.astro";
+
+const getPostSlug = (id: string) => id.replace(/\.md$/, "");
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="blog.fizzysylv.xyz • Fizzy’s Blog"
+  description="Fizzy’s blog — dev logs, con stories, adventures."
+>
+  <BlogHeader title="Fizzy’s Blog" subtitle="dev logs • con stories • adventures" />
+
+  <main class="container blog-main">
+    <section class="post-feed">
+      {posts.map((post) => (
+        <article class="post-card">
+          <PostMeta pubDate={post.data.pubDate} tags={post.data.tags} />
+          <h2 class="post-title">
+            <a href={`/posts/${getPostSlug(post.id)}/`}>{post.data.title}</a>
+          </h2>
+          <p class="post-excerpt">{post.data.excerpt}</p>
+        </article>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

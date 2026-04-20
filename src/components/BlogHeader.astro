@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  homeHref?: string;
+  homeLabel?: string;
+}
+
+const {
+  title,
+  subtitle,
+  homeHref = "https://fizzysylv.xyz",
+  homeLabel = "\u2190 fizzysylv.xyz",
+} = Astro.props;
+---
+
+<header class="blog-header">
+  <div class="container">
+    <div class="blog-topbar">
+      <a class="blog-home" href={homeHref}>{homeLabel}</a>
+      <a
+        class="blog-social"
+        href="https://twitter.com/Sinnaminty"
+        target="_blank"
+        rel="noopener"
+      >
+        @Sinnaminty
+      </a>
+    </div>
+
+    <h1 class="blog-title">{title}</h1>
+    {subtitle && <p class="blog-subtitle">{subtitle}</p>}
+  </div>
+</header>
