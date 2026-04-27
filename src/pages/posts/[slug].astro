@@ -38,4 +38,68 @@ const { Content } = await render(post);
       </p>
     </article>
   </main>
+
+  <script is:inline type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme: "base",
+      themeVariables: {
+        background: "transparent",
+        primaryColor: "#1a0c26",
+        primaryTextColor: "#ffeaf6",
+        primaryBorderColor: "#ff6a98",
+        secondaryColor: "#140a1f",
+        secondaryTextColor: "#ffeaf6",
+        secondaryBorderColor: "#d18cff",
+        tertiaryColor: "#0d0712",
+        tertiaryTextColor: "#ffeaf6",
+        tertiaryBorderColor: "#ffd447",
+        lineColor: "#f2b8d7",
+        textColor: "#ffeaf6",
+        nodeTextColor: "#ffeaf6",
+        clusterBkg: "rgba(255, 255, 255, 0.03)",
+        clusterBorder: "#ff6a98",
+        noteBkgColor: "#1a0c26",
+        noteTextColor: "#ffeaf6",
+        noteBorderColor: "#d18cff",
+        fontFamily: "Atkinson Hyperlegible, sans-serif",
+        fontSize: "18px",
+      },
+    });
+
+    const blocks = document.querySelectorAll('pre[data-language="mermaid"]');
+
+    blocks.forEach((block) => {
+      const lines = block.querySelectorAll(".line");
+      const source =
+        lines.length > 0
+          ? Array.from(lines, (line) => line.textContent).join("\n")
+          : block.textContent;
+      const caption = block.nextElementSibling?.classList.contains("diagram-caption")
+        ? block.nextElementSibling
+        : null;
+      const figure = document.createElement("figure");
+      figure.className = "diagram-figure";
+      const diagram = document.createElement("div");
+      diagram.className = "mermaid";
+      diagram.textContent = source;
+      figure.append(diagram);
+
+      if (caption) {
+        const figcaption = document.createElement("figcaption");
+        figcaption.innerHTML = caption.innerHTML;
+        figure.append(figcaption);
+        caption.remove();
+      }
+
+      block.replaceWith(figure);
+    });
+
+    if (blocks.length > 0) {
+      await mermaid.run({ nodes: document.querySelectorAll(".mermaid") });
+    }
+  </script>
 </BaseLayout>

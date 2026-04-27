@@ -61,9 +61,9 @@ body {
 
 .blog .container {
   width: 100%;
-  max-width: 820px;
+  max-width: 940px;
   margin: 0 auto;
-  padding: 0 1.1rem;
+  padding: 0 1.25rem;
 }
 
 .blog-header {
@@ -93,7 +93,7 @@ body {
 
 .blog-title {
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(2.1rem, 5vw, 3rem);
   color: var(--fg);
 }
 
@@ -178,19 +178,19 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 106, 152, 0.18);
   border-radius: 1.1rem;
-  padding: 1.25rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
 }
 
 .post-page p,
 .post-page li {
   color: var(--fg-soft);
-  font-size: 1.02rem;
-  line-height: 1.65;
+  font-size: clamp(1.1rem, 1.4vw, 1.22rem);
+  line-height: 1.72;
 }
 
 .post-page p {
-  margin: 0.8rem 0;
+  margin: 1rem 0;
 }
 
 .post-page h2,
@@ -201,11 +201,11 @@ body {
 }
 
 .post-page h2 {
-  font-size: 1.4rem;
+  font-size: clamp(1.65rem, 3vw, 2.1rem);
 }
 
 .post-page h3 {
-  font-size: 1.15rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
 }
 
 .post-page a {
@@ -250,9 +250,49 @@ body {
   border: none;
   padding: 0;
   color: var(--fg);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.55;
   display: block;
+}
+
+.post-page .mermaid {
+  margin: 1.35rem 0 1.55rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border-radius: 0.95rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 106, 152, 0.12), transparent 55%),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 106, 152, 0.22);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+.post-page .mermaid svg {
+  display: block;
+  width: auto;
+  max-height: min(78vh, 860px);
+  max-width: 100% !important;
+  min-width: min(100%, 680px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.post-page .diagram-figure {
+  margin: 1.35rem 0 1.55rem;
+}
+
+.post-page .diagram-figure .mermaid {
+  margin: 0;
+}
+
+.post-page .diagram-caption {
+  margin-top: 0.45rem;
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .post-page blockquote {
@@ -303,11 +343,21 @@ body {
   }
 
   .blog-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .post-page,
   .post-card {
     padding: 1rem;
+  }
+
+  .post-page p,
+  .post-page li {
+    font-size: 1.06rem;
+  }
+
+  .post-page .mermaid svg {
+    max-height: 72vh;
+    min-width: min(100%, 560px);
   }
 }
